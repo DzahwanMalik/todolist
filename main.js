@@ -7,6 +7,7 @@ if (window.location.pathname == "/app.html") {
   const lowList = document.getElementById("lowList");
   const prioritySelect = document.getElementById("prioritySelect");
   const completedList = document.getElementById("completedList");
+  const overdueList = document.getElementById("overdueList");
 
   let todos = JSON.parse(localStorage.getItem("todos")) || [];
   const user = JSON.parse(localStorage.getItem("user"));
@@ -23,7 +24,13 @@ if (window.location.pathname == "/app.html") {
     mediumList.innerHTML = "";
     lowList.innerHTML = "";
     completedList.innerHTML = "";
+    overdueList.innerHTML = "";
+
+    const now = Date.now();
+
     todos.forEach((todo) => {
+      const isOverdue = !todo.completed && (now - todo.createdAt > 24 * 60 * 60 * 1000);
+
       const todoItem = document.createElement("li");
       todoItem.className = "p-5 shadow rounded";
       todoItem.innerHTML = `
@@ -47,19 +54,23 @@ if (window.location.pathname == "/app.html") {
 
       if (todo.completed) {
         completedList.appendChild(todoItem);
-      } else {
-        if (todo.priority === "high") {
-          highList.appendChild(todoItem);
-        } else if (todo.priority === "medium") {
-          mediumList.appendChild(todoItem);
-        } else {
-          lowList.appendChild(todoItem);
-        }
+      } else if(isOverdue) {
+        overdueList.appendChild(todoItem);
+      } else if(todo.priority === "high") {
+        highList.appendChild(todoItem);
+      } else if(todo.priority === "medium") {
+        mediumList.appendChild(todoItem);
+      } else if(todo.priority === "low") {
+        lowList.appendChild(todoItem);
       }
     });
   }
 
+  // Initial render
   renderTodos();
+  
+  // Check if there are any overdue tasks every hour
+  setInterval(renderTodos, 60 * 60 * 1000);
 
   function addTodo() {
     const todo = todoInput.value;
@@ -73,6 +84,7 @@ if (window.location.pathname == "/app.html") {
           day: "numeric",
           month: "long",
         }),
+        createdAt: Date.now(),
       });
       saveTodos();
       renderTodos();
