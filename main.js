@@ -105,54 +105,7 @@ if (window.location.pathname == "/app.html") {
   });
 }
 
-if (window.location.pathname == "/login.html") {
-  // Login
-  const loginButton = document.getElementById("loginButton");
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-  const user = localStorage.getItem("user");
-
-  loginButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    if (username && password) {
-      if (user) {
-        const parsedUser = JSON.parse(user);
-        if (
-          parsedUser.username === username &&
-          parsedUser.password === password
-        ) {
-          window.location.href = "app.html";
-        } else {
-          alert("Invalid username or password");
-        }
-      }
-    } else {
-      alert("Please enter username and password");
-    }
-  });
-}
-
-if (window.location.pathname == "/signup.html") {
-  // Sign Up
-  const signupButton = document.getElementById("signupButton");
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-
-  signupButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    // Store Data To Local Storage
-    localStorage.setItem("user", JSON.stringify({ username, password }));
-    window.location.href = "login.html";
-  });
-}
-
-if(window.location.pathname == "/index.html") {
+if(window.location.pathname == "/") {
     const addTaskButton = document.getElementById("addTaskButton");
     addTaskButton.addEventListener("click", (event) => {
         event.preventDefault();
