@@ -12,7 +12,7 @@ signupButton.addEventListener("click", (event) => {
 
   // Store Data To Local Storage
   if (username && password) {
-    if (parsedUser.username === username) {
+    if (parsedUser && parsedUser.username === username) {
       alert("Username already exists");
     } else {
       localStorage.setItem("user", JSON.stringify({ username, password }));
