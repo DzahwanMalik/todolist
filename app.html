@@ -8,95 +8,99 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div
-        class="bg-indigo-600 text-white p-4 flex justify-between items-center"
-      >
-        <div>
-          <h1 class="font-bold text-xl"><a href="">ToDo List</a></h1>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="flex flex-col items-end">
-            <span class="font-semibold text-sm" id="employeeName"></span>
-            <span class="text-xs text-gray-200">Employee</span>
-          </div>
-          <div class="rounded-full size-10 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpDSliqhEkOhzU-wkprx3YtH3g8jw6WxVAA&s')] bg-cover"></div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="p-4">
-        <div class="mb-4">
-          <form action="" class="flex flex-col gap-2" id="taskForm">
-            <div class="flex gap-2">
-              <input
-                type="text"
-                id="taskInput"
-                class="border border-gray-300 rounded p-2 w-full"
-                placeholder="Add a new task"
-              />
-              <select
-                name="priority"
-                id="prioritySelect"
-                class="border border-gray-300 rounded p-2"
-              >
-                <option value="low" class="bg-green-100 text-green-800">
-                  Low
-                </option>
-                <option value="medium" class="bg-yellow-100 text-yellow-800">
-                  Medium
-                </option>
-                <option value="high" class="bg-red-100 text-red-800">
-                  High
-                </option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              class="bg-indigo-600 text-white rounded p-2 duration-300 ease-in-out hover:bg-indigo-800"
-              id="addTaskButton"
-            >
-              Add Task
-            </button>
-          </form>
-        </div>
-
-        <div class="mb-2 font-semibold">Priority High</div>
-        <ul id="highList" class="flex flex-col gap-3 mb-10">
-          <!-- Tasks will be added here dynamically -->
-        </ul>
-
-        <div class="mb-2 font-semibold">Priority Medium</div>
-        <ul id="mediumList" class="flex flex-col gap-3 mb-10">
-          <!-- Tasks will be added here dynamically -->
-        </ul>
-
-        <div class="mb-2 font-semibold">Priority Low</div>
-        <ul id="lowList" class="flex flex-col gap-3 mb-10">
-          <!-- Tasks will be added here dynamically -->
-        </ul>
-
-        <div class="mb-2 font-semibold">Completed Tasks</div>
-        <ul id="completedList" class="flex flex-col gap-3 mb-10">
-          <!-- Completed tasks will be added here dynamically -->
-        </ul>
-
-        <div class="mb-2 font-semibold">Overdue Tasks</div>
-        <ul id="overdueList" class="flex flex-col gap-3 mb-10">
-          <!-- Overdue tasks will be added here dynamically -->
-        </ul>
-
-        <!-- Delete All -->
-        <button
-          type="button"
-          class="bg-red-500 text-white rounded p-2 w-full duration-300 ease-in-out hover:bg-red-600"
-          id="deleteAllButton"
+    <div class="max-w-160 m-auto shadow-xl min-h-screen">
+      <header>
+        <div
+          class="bg-indigo-600 text-white p-4 flex justify-between items-center"
         >
-          Delete All
-        </button>
-      </div>
-    </main>
-    <footer></footer>
+          <div>
+            <h1 class="font-bold text-xl"><a href="">ToDo List</a></h1>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex flex-col items-end">
+              <span class="font-semibold text-sm" id="employeeName"></span>
+              <span class="text-xs text-gray-200">Employee</span>
+            </div>
+            <div
+              class="rounded-full size-10 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpDSliqhEkOhzU-wkprx3YtH3g8jw6WxVAA&s')] bg-cover"
+            ></div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="p-4">
+          <div class="mb-4">
+            <form action="" class="flex flex-col gap-2" id="taskForm">
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="taskInput"
+                  class="border border-gray-300 rounded p-2 w-full"
+                  placeholder="Add a new task"
+                />
+                <select
+                  name="priority"
+                  id="prioritySelect"
+                  class="border border-gray-300 rounded p-2"
+                >
+                  <option value="low" class="bg-green-100 text-green-800">
+                    Low
+                  </option>
+                  <option value="medium" class="bg-yellow-100 text-yellow-800">
+                    Medium
+                  </option>
+                  <option value="high" class="bg-red-100 text-red-800">
+                    High
+                  </option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="bg-indigo-600 text-white rounded p-2 duration-300 ease-in-out hover:bg-indigo-800"
+                id="addTaskButton"
+              >
+                Add Task
+              </button>
+            </form>
+          </div>
+
+          <div class="mb-2 font-semibold">Priority High</div>
+          <ul id="highList" class="flex flex-col gap-3 mb-10">
+            <!-- Tasks will be added here dynamically -->
+          </ul>
+
+          <div class="mb-2 font-semibold">Priority Medium</div>
+          <ul id="mediumList" class="flex flex-col gap-3 mb-10">
+            <!-- Tasks will be added here dynamically -->
+          </ul>
+
+          <div class="mb-2 font-semibold">Priority Low</div>
+          <ul id="lowList" class="flex flex-col gap-3 mb-10">
+            <!-- Tasks will be added here dynamically -->
+          </ul>
+
+          <div class="mb-2 font-semibold">Completed Tasks</div>
+          <ul id="completedList" class="flex flex-col gap-3 mb-10">
+            <!-- Completed tasks will be added here dynamically -->
+          </ul>
+
+          <div class="mb-2 font-semibold">Overdue Tasks</div>
+          <ul id="overdueList" class="flex flex-col gap-3 mb-10">
+            <!-- Overdue tasks will be added here dynamically -->
+          </ul>
+
+          <!-- Delete All -->
+          <button
+            type="button"
+            class="bg-red-500 text-white rounded p-2 w-full duration-300 ease-in-out hover:bg-red-600"
+            id="deleteAllButton"
+          >
+            Delete All
+          </button>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

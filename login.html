@@ -7,39 +7,53 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-gray-200">
-    <div class="container flex justify-center items-center h-screen p-5">
-      <form action="" class="bg-white p-6 rounded-md shadow-md w-full max-w-sm">
-        <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
-        <div class="mb-4">
-          <label for="username" class="block text-gray-700 mb-2">Username</label>
-          <input
-            type="text"
-            id="username"
-            class="w-full p-2 border border-gray-300 rounded"
-            placeholder="Enter your username"
-            required
-          />
-        </div>
-        <div class="mb-1">
-          <label for="password" class="block text-gray-700 mb-2">Password</label>
-          <input
-            type="password"
-            id="password"
-            class="w-full p-2 border border-gray-300 rounded"
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        <span class="block text-sm text-gray-600 mb-4">Don't have an account? <a href="signup.html" class="text-indigo-600 font-semibold">Sign Up</a></span>
-        <button
-          type="submit"
-          id="loginButton"
-          class="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 transition duration-300"
+  <body>
+    <div class="max-w-160 m-auto shadow-xl">
+      <div class="container flex justify-center items-center h-screen p-5">
+        <form
+          action=""
+          class="bg-white p-6 rounded-md shadow-md w-full max-w-sm"
         >
-          Login
-        </button>
-      </form>
+          <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+          <div class="mb-4">
+            <label for="username" class="block text-gray-700 mb-2"
+              >Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="mb-1">
+            <label for="password" class="block text-gray-700 mb-2"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="w-full p-2 border border-gray-300 rounded"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <span class="block text-sm text-gray-600 mb-4"
+            >Don't have an account?
+            <a href="signup.html" class="text-indigo-600 font-semibold"
+              >Sign Up</a
+            ></span
+          >
+          <button
+            type="submit"
+            id="loginButton"
+            class="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 transition duration-300"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
     <script src="doLogin.js"></script>
   </body>
